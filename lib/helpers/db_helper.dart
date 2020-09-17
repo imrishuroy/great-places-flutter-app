@@ -9,7 +9,7 @@ class DBHelper {
       return db.execute(
           'CREATE TABLE user_places(id TEXT PRIMARY KEY, title TEXT, image TEXT)');
     }, version: 1);
-    sqlDb.insert(
+    await sqlDb.insert(
       table,
       data,
       conflictAlgorithm: sql.ConflictAlgorithm.replace,
